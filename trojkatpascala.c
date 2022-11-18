@@ -2,7 +2,7 @@
 
 int main(){
 	const int len = 32;
-	unsigned short trojkat[len][len];
+	unsigned int trojkat[len][len];
 
 	for(int i = 0; i < len; i++){
 		for(int j = 0; j < len; j++){
