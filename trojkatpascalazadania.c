@@ -48,8 +48,22 @@ int main(){
 	printf("\t30-tego wiersza: %d\n", max30);
 
 	printf("\nB. Zestawienie indeksu wiersza oraz liczby jego cyfr:\n");
-	printf("\tTODO!\n");
-	
+	for(int i = 0; i < len; i++){
+		if(i%5==0&&i!=0){printf("\n");} // sprawa całkowicie semantyczna
+		int digitAmount = 0;
+		for(int j = 0; j < len; j++){
+			int workingNum = trojkat[i][j];
+			if(workingNum != 0){
+				while(workingNum != 0){
+					workingNum = workingNum / 10;
+					digitAmount++;
+				}
+			}
+		}
+		printf("\tWiersz %2d: %d", i+1, digitAmount);
+	}
+	printf("\n");
+
 	printf("\nC. Podaj numery wierszy, które nie zawierają liczb podzielnych przez 5.\n");
 	printf("\t");
 	for(int i = 0; i < len; i++){
@@ -60,13 +74,13 @@ int main(){
 			}
 		}
 		if(!fiveMod){
-			printf("Wiersz %2d; ", i+1);
+			printf("Wiersz %d; ", i+1);
 		}
 	}
 	printf("\n");
-	
+
 	printf("\nD. Graficzny rozkład liczb znajdujących się w trójkącie...\n");
 	printf("\tTo już musi być zrobione w Excelu...\n");
-	
+
 	return 0;
 }
